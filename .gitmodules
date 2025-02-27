@@ -1,0 +1,10 @@
+[submodule "rtl/vproc_rtl"]
+	path = rtl/vproc_rtl
+	url = https://github.com/vproc/vproc_rtl
+[submodule "rtl/fpu_ss"]
+	path = rtl/fpu_ss
+	url = https://github.com/ParkerJones567/fpu_ss.git
+[submodule "rtl/cv32e40x"]
+	path = rtl/cv32e40x
+	url = https://github.com/ParkerJones567/cv32e40x_f_zhf.git
+	branch = f_zhf_fixes
