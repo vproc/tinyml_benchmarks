@@ -2,7 +2,7 @@
 
 ### Overview
 
-This repository contains the system for running TinyML Benchmarks on a system with the CV32E40X scalar core and Vicuna on the CV-X-IF interface.  It currently supports two benchmarks from the [MLPerfTiny Suite](https://github.com/mlcommons/tiny), **toycar** and **aww**.
+This repository contains the system for running TinyML Benchmarks on a system with the CV32E40X scalar core and Vicuna 2.0 on the CV-X-IF interface.  It currently supports two benchmarks from the [MLPerfTiny Suite](https://github.com/mlcommons/tiny), **toycar** and **aww**.
 
 Due to the limitations of CMake support for native and cross-compiliation within the same project, two separate CMake projects are used.  The first, defined in the **/build_model** directory, uses Verilator version v5.030 to create a executable Verilator model of Vicuna for the selected configuration.  The second, defined in **/build_benchmarks**, uses the LLVM version 18.1.4 and [Tensorflow Lite for Microcontrollers](https://github.com/tensorflow/tflite-micro) to compile the benchmarks for the selected configuration of Vicuna.  Each compiled benchmark is registered with CTest.
 
