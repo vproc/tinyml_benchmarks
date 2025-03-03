@@ -2,9 +2,19 @@
 
 ### Overview
 
-This repository contains the system for running TinyML Benchmarks on a system with the CV32E40X scalar core and Vicuna on the CV-X-IF interface.  It currently supports two benchmarks from the MLPerfTiny Suite LINK, **toycar** and **aww**.
+This repository contains the system for running TinyML Benchmarks on a system with the CV32E40X scalar core and Vicuna on the CV-X-IF interface.  It currently supports two benchmarks from the [MLPerfTiny Suite](https://github.com/mlcommons/tiny), **toycar** and **aww**.
 
-Due to the limitations of CMake support for native and cross-compiliation within the same project, two separate CMake projects are used.  The first, defined in the **/build_model** directory, uses Verilator version TODO to create a executable Verilator model of Vicuna for the selected configuration.  The second, defined in ***build_benchmarks**, uses the LLVM version X.X and Tensorflow Lite for Microcontrollers LINK to compile the benchmarks for the selected configuration of Vicuna.  Each compiled benchmark is registered with CTest.
+Due to the limitations of CMake support for native and cross-compiliation within the same project, two separate CMake projects are used.  The first, defined in the **/build_model** directory, uses Verilator version v5.030 to create a executable Verilator model of Vicuna for the selected configuration.  The second, defined in **/build_benchmarks**, uses the LLVM version 18.1.4 and [Tensorflow Lite for Microcontrollers](https://github.com/tensorflow/tflite-micro) to compile the benchmarks for the selected configuration of Vicuna.  Each compiled benchmark is registered with CTest.
+
+### Directory Structure
+
+- **/CMake**              : directory containing CMake helper files
+- **/benchmark_sources**  : directory containing benchmark source files and benchmark generators
+- **/bsp**                : directory containing support libraries and linker files
+- **/build_benchmarks**   : build directory for benchmark code
+- **/build_model**        : build directory for verilator model
+- **/rtl**                : directory containing rtl submodules
+- **/scripts**            : directory containing support scripts for setup and analysis
 
 
 ### Getting Started
@@ -65,7 +75,7 @@ The arguments for the benchmarks CMake project are as follows.  For proper resul
 ctest
 ```
 
-Simulation results and traces will be available in the **/build_benchmarks/build/Testing** directory
+Simulation results and traces are available in the **/build_benchmarks/build/Testing** directory after running the tests
 
 
 
